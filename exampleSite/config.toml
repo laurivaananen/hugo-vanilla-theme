@@ -1,0 +1,4 @@
+theme = "hugo-vanilla-theme"
+languageCode = "en-us"
+baseurl = "http://example.com/"
+title = "Hugo Tailwindcss Starter"
