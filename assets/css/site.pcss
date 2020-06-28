@@ -1,3 +1,116 @@
-.starter {
-  color: blue;
+.waves {
+    background-image: url("/sine_waves_crop.svg");
+    background-size: 3500px;
+    height: 700px;
+    background-position: -1300px;
+}
+
+.card {
+    h1, h2, h3 {
+        @apply border-b border-blue-200 mb-2 pb-2;
+    }
+}
+
+.markdown {
+    @apply leading-relaxed flex flex-col;
+
+    > * + * {
+        @apply mt-6;
+    }
+
+    > * > * > * + * {
+        @apply mt-2;
+    }
+
+    h1, h2, h3 {
+        @apply font-semibold leading-tight;
+    }
+
+    strong {
+        @apply font-semibold;
+    }
+
+    pre {
+        @apply p-2 rounded overflow-x-auto;
+    }
+
+    p > code {
+        @apply bg-gray-200 p-1;
+    }
+
+    h1 {
+        @apply text-3xl;
+    }
+
+    h2 {
+        @apply text-2xl;
+    }
+
+    h3 {
+        @apply text-xl;
+    }
+
+    p, code {
+        @apply text-sm;
+    }
+
+    blockquote {
+        @apply border-solid border-l-4 border-teal-800 pl-6 italic;
+    }
+
+    section p {
+        @apply mt-2;
+    }
+
+    a {
+        @apply text-teal-600;
+    }
+
+    a:hover {
+        @apply text-teal-500;
+    }
+
+    ul {
+        @apply list-disc pl-6;
+
+        ul {
+            @apply mt-2;
+        }
+
+        li + li {
+            @apply mt-2;
+        }
+    }
+}
+
+/*@screen lg {
+    .markdown {
+        figure {
+            @apply -mx-32;
+        }
+    }
+}*/
+
+@screen sm {
+    .markdown {
+        h1 {
+            @apply text-5xl;
+        }
+
+        h2 {
+            @apply text-4xl;
+        }
+
+        h3 {
+            @apply text-3xl;
+        }
+
+        p, code {
+            @apply text-base;
+        }
+
+        pre {
+            @apply p-4;
+        }
+    }
 }

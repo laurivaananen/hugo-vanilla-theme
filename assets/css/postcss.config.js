@@ -28,6 +28,7 @@ module.exports = {
     require("postcss-import")({
       path: [themeDir]
     }),
+    require('postcss-nested'),
     require("tailwindcss")(themeDir + "assets/css/tailwind.config.js"),
     require("autoprefixer")({
       path: [themeDir]

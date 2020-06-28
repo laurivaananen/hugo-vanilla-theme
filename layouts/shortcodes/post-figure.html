@@ -1,0 +1,28 @@
+{{ $image := ($.Site.GetPage "section" "images").Resources.GetMatch (printf "*%s*" (.Get "name")) }}
+
+{{ $options := .Get "options"}}
+{{ $method := .Get "method" }}
+{{ $classes := .Get "classes" }}
+{{ $big := .Get "big" }}
+
+{{ if eq $method "Fill" }}
+{{ .Scratch.Set "modified-image" ($image.Fill $options) }}
+{{ else if eq $method "Fit" }}
+{{ .Scratch.Set "modified-image" ($image.Fit $options) }}
+{{ else if eq $method "Resize" }}
+{{ .Scratch.Set "modified-image" ($image.Resize $options) }}
+{{ end }}
+
+{{ $modified := .Scratch.Get "modified-image" }}
+
+<figure class="relative mx-auto {{ if $big }}xl:-mx-48 lg:-mx-24{{ end }}">
+    <a href="{{ $image.Permalink }}" target="_blank">
+        <img class='container-image block {{ $classes }}' src="{{ $modified.Permalink }}" width="{{ $modified.Width }}"
+            height="{{ $modified.Height }}" alt='{{ .Get "alt" }}'>
+    </a>
+    {{ with .Inner }}
+    <figcaption class="absolute inset-x-0 bottom-0 bg-gray-900 text-white px-2 py-1 opacity-75 text-sm">
+        {{ . | markdownify }}
+    </figcaption>
+    {{ end }}
+</figure>
