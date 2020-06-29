@@ -1,31 +1,15 @@
-{{ $imgName := .Get 0}}
-{{ $original := ($.Site.GetPage "section" "images").Resources.GetMatch (printf "*%s*" $imgName) }}
-{{ $command := .Get 1 }}
-{{ $options := .Get 2 }}
-{{ $classes := .Get 3 }}
+{{ $image := resources.Get (.Get "path") }}
 
-{{ if $original }}
-{{ if eq $command "Fit"}}
-{{ .Scratch.Set "image" ($original.Fit $options) }}
-{{ else if eq $command "Resize"}}
-{{ .Scratch.Set "image" ($original.Resize $options) }}
-{{ else if eq $command "Fill"}}
-{{ .Scratch.Set "image" ($original.Fill $options) }}
-{{ else }}
-{{ errorf "Invalid image processing command: Must be one of Fit, Fill or Resize."}}
+{{ $options := .Get "options"}}
+{{ $method := .Get "method" }}
+
+{{ if eq $method "Fill" }}
+{{ .Scratch.Set "modified-image" ($image.Fill $options) }}
+{{ else if eq $method "Fit" }}
+{{ .Scratch.Set "modified-image" ($image.Fit $options) }}
+{{ else if eq $method "Resize" }}
+{{ .Scratch.Set "modified-image" ($image.Resize $options) }}
 {{ end }}
 
-{{ $image := .Scratch.Get "image" }}
 
-<figure class="max-w-screen-lg mx-auto">
-    <a href="{{$original.Permalink}}">
-        <img class="{{ with $classes}}{{.}}{{ end }}" src="{{ $image.Permalink }}" width="{{ $image.Width }}"
-            height="{{ $image.Height }}" alt="{{ $imgName }}">
-    </a>
-    {{ with .Inner }}
-    <figcaption>
-        {{ . }}
-    </figcaption>
-    {{ end }}
-</figure>
-{{ end }}
+<img src='{{ (.Scratch.Get "modified-image").Permalink }}' alt='{{ .Get "alt" }}'>

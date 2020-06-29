@@ -6,10 +6,12 @@ author: "Author"
 keywords:
     - "Word"
 summary: "blogpost"
-thumbnail: "thumbnail"
+thumbnail: "images/house_3.jpg"
 disqus: false
 alt: "hero alt"
 ---
+
+{{< container-image path="images/house_3.jpg" method="Resize" options="300x300 jpg q10 Lanczos Smart" alt="Gray cat" >}}
 
 **What programming language should I learn first?**
 

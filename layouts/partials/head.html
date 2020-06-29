@@ -33,8 +33,7 @@
 <meta property="article:section" content="{{ .Section }}" />
 {{ end }}
 
-{{ $imgName := .Params.thumbnail}}
-{{ $original := ($.Site.GetPage "section" "images").Resources.GetMatch (printf "*%s*" $imgName) }}
+{{ $original := resources.Get (print .Params.thumbnail) }}
 {{ if $original }}
 {{ $ogimage := $original.Fill "1080x1080 jpg center q50 jpg Lanczos white" }}
 <meta property="og:image" content="{{ $ogimage.Permalink }}" />
