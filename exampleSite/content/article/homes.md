@@ -5,9 +5,11 @@ draft: false
 author: "Author"
 keywords:
     - "Word"
-summary: "blogpost"
+summary: "Qui nisl tollit ex, cu vitae invidunt sea, malorum petentium repudiare at sea. Duo quando impedit ne, dicant vocibus contentiones eam at. Aeque saepe ignota vis et. Ne brute soleat postea"
 thumbnail: "images/house_3.jpg"
 disqus: false
 alt: "hero alt"
 ---
+
+lorem
 

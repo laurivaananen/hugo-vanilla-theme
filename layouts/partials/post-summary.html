@@ -7,7 +7,7 @@
             {{ $image := ($original.Fill "1200x630 jpg center q75 jpg Lanczos" )}}
             <img class="object-cover w-full h-auto" src="{{ $image.Permalink }}" alt="{{ .Params.thumbnail }}">
             {{ end }}
-            <div class="flex flex-col mt-2">
+            <div class="flex flex-col mt-4">
                 <div class="flex flex-row justify-between items-start">
                     <div>
                         <div class="text-xs sm:text-sm text-gray-500 flex justify-between">
@@ -30,7 +30,7 @@
                         {{ .Section | title }}
                     </span>
                 </div>
-                <p class="text-sm sm:text-base">{{ .Summary }}</p>
+                <p class="text-sm sm:text-base h-24 text-gray-800">{{ .Summary }}</p>
             </div>
         </div>
     </a>
