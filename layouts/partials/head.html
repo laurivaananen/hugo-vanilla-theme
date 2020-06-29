@@ -35,7 +35,7 @@
 
 {{ $original := resources.Get (print .Params.thumbnail) }}
 {{ if $original }}
-{{ $ogimage := $original.Fill "1080x1080 jpg center q50 jpg Lanczos white" }}
+{{ $ogimage := $original.Fill "1200x630 jpg center q50 jpg Lanczos white" }}
 <meta property="og:image" content="{{ $ogimage.Permalink }}" />
 <meta name="twitter:image" content="{{ $ogimage.Permalink }}" />
 <meta property="og:image:type" content="image/jpeg" />
