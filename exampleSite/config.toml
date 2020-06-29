@@ -1,4 +1,4 @@
 theme = "hugo-vanilla-theme"
 languageCode = "en-us"
-baseurl = "http://example.com/"
-title = "Hugo Tailwindcss Starter"
+baseurl = "https://hugo-vanilla-theme.netlify.app/"
+title = "Hugo Vanilla Theme"
