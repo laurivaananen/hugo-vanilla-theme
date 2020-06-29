@@ -1,7 +1,6 @@
 [build]
-    base = "exampleSite"
-    command = "hugo --themesDir ../.."
-    publish = "public"
+    command = "mv '$PWD' '${PWD%/*}/hugo-vanilla-theme' && hugo -s exampleSite --themesDir ../.."
+    publish = "exampleSite/public"
 
 [build.environment]
     HUGO_VERSION = "0.73.0"
