@@ -1,8 +1,18 @@
 {{ define "main" }}
-{{ range .Pages }}
-    <article class="text-gray-700 sm:mx-12 mb-4">
-        <h1 class="font-bold font-thin text-3xl text-gray-700"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
-        {{ .Content }}
-    </article>
-{{ end }}
+<div class="flex flex-col py-32">
+    <div class="max-w-5xl mx-auto px-4 w-full">
+        {{ $title := delimit (slice "Latest" ((title .Section) | pluralize)) " " }}
+        <h1 data-text="{{ $title }}" class="font-semibold text-3xl sm:text-5xl relative">{{ $title }}</h1>
+        {{ range first 1 .Pages }}
+        {{- partial "post-summary.html" . -}}
+        {{ end }}
+        <div class="flex flex-wrap">
+            {{ range after 1 .Pages }}
+            <div class="w-full sm:w-1/2 min-w-32">
+                {{- partial "post-summary.html" . -}}
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
 {{ end }}

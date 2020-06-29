@@ -2,3 +2,17 @@ theme = "hugo-vanilla-theme"
 languageCode = "en-us"
 baseurl = "https://hugo-vanilla-theme.netlify.app/"
 title = "Hugo Vanilla Theme"
+
+[related]
+threshold = 80.0
+includeNewer = true
+toLower = true
+
+  [[related.indices]]
+  name = "keywords"
+  weight = 100.0
+
+  [[related.indices]]
+  name = "date"
+  weight = 10.0
+

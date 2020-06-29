@@ -16,7 +16,7 @@
         <div class="lg:flex block w-full lg:w-auto hidden mt-2 sm:mt-0 lg:space-x-2"
             :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }" @click.away="isOpen = false" x-show="true">
             {{ range .Site.Sections }}
-            <a href="{{ .Permalink }}" class="text-gray-500 hover:text-blue-400 h-16 flex items-center px-4"
+            <a href="{{ .Permalink }}" class="text-gray-500 hover:text-blue-400 h-12 lg:h-16 flex items-center px-4"
                 @click="isOpen = false">{{ .Title }}</a>
             {{ end }}
         </div>
