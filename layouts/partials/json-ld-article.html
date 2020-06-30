@@ -11,6 +11,14 @@
         "@type": "Person",
         "name": {{ .Params.author }}
     },
-    "name": {{ .Title }}
+    "publisher": {
+        "@type": "Person",
+        "name": {{ .Params.author }}
+    },
+    "name": {{ .Title }},
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": {{ .Permalink }}
+    }
 }
 </script>
