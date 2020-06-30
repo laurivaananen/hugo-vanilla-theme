@@ -11,10 +11,7 @@
         "@type": "Person",
         "name": {{ .Params.author }}
     },
-    "publisher": {
-        "@type": "Person",
-        "name": {{ .Params.author }}
-    },
+    "publisher": {{ .Params.author }},
     "name": {{ .Title }},
     "mainEntityOfPage": {
         "@type": "WebPage",
