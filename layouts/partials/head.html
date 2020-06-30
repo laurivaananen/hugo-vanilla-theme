@@ -58,4 +58,6 @@
 {{ .Scratch.Set "medium" ($original.Fill "840x630 jpg center q50 jpg Lanczos white") }}
 {{ .Scratch.Set "small" ($original.Fill "630x630 jpg center q50 jpg Lanczos white") }}
 {{ end }}
+{{ if eq .Section "article" }}
 {{- partial "json-ld-article.html" . -}}
+{{ end }}
