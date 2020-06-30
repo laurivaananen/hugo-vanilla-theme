@@ -52,3 +52,10 @@
 {{ end -}}
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
+{{ $original := resources.Get (print .Params.thumbnail) }}
+{{ if $original }}
+{{ .Scratch.Set "big" ($original.Fill "1120x630 jpg center q50 jpg Lanczos white") }}
+{{ .Scratch.Set "medium" ($original.Fill "840x630 jpg center q50 jpg Lanczos white") }}
+{{ .Scratch.Set "small" ($original.Fill "630x630 jpg center q50 jpg Lanczos white") }}
+{{ end }}
+{{- partial "json-ld-article.html" . -}}
