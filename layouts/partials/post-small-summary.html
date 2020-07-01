@@ -1,33 +1,38 @@
-<div class="mt-2">
+<article class="mt-8 hover:shadow-lg p-4">
     <a href="{{ .Permalink }}">
-        <article class="flex flex-col py-2">
+        <div class="flex flex-col">
             {{ $imgName := .Params.thumbnail}}
-            {{ $original := ($.Site.GetPage "section" "images").Resources.GetMatch (printf "*%s*" $imgName) }}
+            {{ $original := resources.Get (print .Params.thumbnail) }}
             {{ if $original }}
-            {{ $image := ($original.Fill "500x500 jpg center q75 jpg Lanczos" )}}
-            <img class="object-cover h-48 w-full" src="{{ $image.Permalink }}" alt="{{ .Params.thumbnail }}">
+            {{ $large := ($original.Fill "600x315 jpg center q75 jpg Lanczos" )}}
+            <img class="object-cover w-full h-auto" src="{{ $large.Permalink }}" width="{{ $large.Width }}"
+                height="{{ $large.Height }}" loading="lazy" alt="{{ .Params.alt }}">
             {{ end }}
-            <div class=" flex flex-col">
-                <p class="font-semibold self-start text-teal-600 mt-2">
-                    {{ .Section | title }}
-                </p>
-                <h3 class="hover:underline font-semibold text-xl  inline-block leading-tight">
-                    {{ .Title }}
-                </h3>
-                <div class="text-xs text-gray-500 flex justify-between">
+            <div class="flex flex-col mt-4">
+                <div class="flex flex-row justify-between items-start">
                     <div>
-                        <time datetime='{{ .Date.Format "2006-01-02T15:04:05Z" }}'>
-                            {{- .Date.Format (.Site.Params.dateform | default "January 2, 2006") -}}
-                        </time>
-                        By
-                        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-                            <span itemprop="name">{{ .Params.author }}</span>
-                        </span>
+                        <div class="text-xs sm:text-sm text-gray-500 flex justify-between">
+                            <div>
+                                <time datetime='{{ .Date.Format "2006-01-02T15:04:05Z" }}'>
+                                    {{- .Date.Format (.Site.Params.dateform | default "January 2, 2006") -}}
+                                </time>
+                                By
+                                <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                    <span itemprop="name">{{ .Params.author }}</span>
+                                </span>
+                            </div>
+                            <span class="disqus-comment-count" data-disqus-identifier="{{ .File.UniqueID }}"></span>
+                        </div>
+                        <h3 class="font-semibold text-xl sm:text-2xl inline-block leading-tight">
+                            {{ .Title }}
+                        </h3>
                     </div>
-                    <span class="disqus-comment-count" data-disqus-identifier="{{ .File.UniqueID }}"></span>
+                    <span class="font-semibold text-teal-600 text-xs sm:text-sm">
+                        {{ .Section | title }}
+                    </span>
                 </div>
-                <p class="mt-4 text-sm">{{ .Summary }}</p>
+                <p class="text-sm sm:text-base h-24 text-gray-800">{{ .Summary }}</p>
             </div>
-        </article>
+        </div>
     </a>
-</div>
+</article>

@@ -4,8 +4,13 @@
             {{ $imgName := .Params.thumbnail}}
             {{ $original := resources.Get (print .Params.thumbnail) }}
             {{ if $original }}
-            {{ $image := ($original.Fill "1200x630 jpg center q75 jpg Lanczos" )}}
-            <img class="object-cover w-full h-auto" src="{{ $image.Permalink }}" alt="{{ .Params.thumbnail }}">
+            {{ $large := ($original.Fill "1200x630 jpg center q75 jpg Lanczos" )}}
+            {{ $medium := ($original.Fill "900x473 jpg center q75 jpg Lanczos" )}}
+            {{ $small := ($original.Fill "600x315 jpg center q75 jpg Lanczos" )}}
+            <img class="object-cover w-full h-auto" src="{{ $large.Permalink }}"
+                srcset="{{ $small.Permalink}} {{ $small.Width }}w, {{ $medium.Permalink}} {{ $medium.Width }}w, {{ $large.Permalink}} {{ $large.Width }}w"
+                sizes="(max-width: 600px) 600px, (max-width: 900px) 900px, 1200px" loading="lazy"
+                alt="{{ .Params.alt }}" width="{{ $large.Width }}" height="{{ $large.Height }}">
             {{ end }}
             <div class="flex flex-col mt-4">
                 <div class="flex flex-row justify-between items-start">

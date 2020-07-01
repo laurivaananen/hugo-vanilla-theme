@@ -1,0 +1,14 @@
+{{ $image := resources.Get (.Get "path") }}
+
+{{ $classes := .Get "classes" }}
+
+{{ $large := ($image.Resize "1120x jpg q75 jpg Lanczos" )}}
+{{ $medium := ($image.Resize "928x jpg q75 jpg Lanczos" )}}
+{{ $small := ($image.Resize "736x jpg q75 jpg Lanczos" )}}
+
+<div class="relative mx-auto xl:-mx-48 lg:-mx-24">
+    <img class="object-cover w-full h-auto {{ $classes }}" src='{{ $large.Permalink }}'
+        srcset="{{ $small.Permalink}} {{ $small.Width }}w, {{ $medium.Permalink}} {{ $medium.Width }}w, {{ $large.Permalink}} {{ $large.Width }}w"
+        sizes="(max-width: 1024px) 736px, (max-width: 1280px) 928px, 1120px" loading="lazy" alt='{{ .Get "alt" }}'
+        width="{{ $large.Width }}" height="{{ $large.Height }}">
+</div>

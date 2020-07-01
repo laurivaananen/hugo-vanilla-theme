@@ -11,5 +11,8 @@ disqus: false
 alt: "hero alt"
 ---
 
-lorem
+Iriure placerat quo an. Ius mutat splendide et. Nam sale dolorem commune at, et qui veniam scriptorem. Wisi facilisi in nec, ei purto ubique partiendo vim.
 
+Tota prima tractatos an eum, vidit officiis voluptatum te vel. Gubergren intellegebat signiferumque vim at. Eam at quas quando fierent, suas similique ius id. Tollit consulatu te his, nam no dicat laboramus prodesset.
+
+{{< responsive-image path="images/house_3.jpg" alt="Most popular programming languages" classes="" >}}
