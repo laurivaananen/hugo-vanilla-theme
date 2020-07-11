@@ -14,13 +14,13 @@
         {{ .Title }}
       </h1>
       <h3 class="text-lg sm:text-2xl mt-8">
-        Authentic Sun Moon Lake tea roasted daily with traditional techniques
+        Rich single origin teas from the high mountains of Tainan
       </h3>
       <div class="flex flex-row mt-12 items-center text-sm sm:text-lg">
         <a
           class="bg-orange-600 px-6 py-3 rounded-full text-orange-100 tracking-wider"
           href="{{ (.Site.GetPage "contact.md").Permalink }}"
-          >Contact Us</a
+          >Order Now</a
         ><a class="ml-8 flex items-center tracking-wider" href="{{ (.Site.GetPage "menu.md").Permalink }}"
           ><span>Our Menu</span
           ><svg
@@ -40,7 +40,7 @@
 {{ end }}
 <div class="py-32 bg-gray-200">
   <div class="max-w-6xl mx-auto flex">
-    <div class="w-1/2 pt-16 pb-64 text-gray-800 px-8">
+    <div class="w-1/2 text-gray-800 px-8">
       <h2 class="font-semibold text-orange-400 text-3xl pb-8">
         Finest Tea from the High Mountains of Tainan
       </h2>
@@ -58,11 +58,10 @@
       </div>
     </div>
     {{ $original := resources.Get "images/jiufen_raw.jpg" }}
-    {{ $large := ($original.Fill "720x1080 jpg center q75 jpg Lanczos" )}}
+    {{ $large := ($original.Resize "576x jpg center q75 jpg Lanczos" )}}
     <div
       class="w-1/2"
-      style="background-image: url({{ $large.Permalink }})"
-    ></div>
+    ><img src="{{ $large.Permalink }}" alt=""></div>
   </div>
 </div>
 {{ end }}

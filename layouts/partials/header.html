@@ -1,5 +1,5 @@
 <header
-  class="w-full px-4 max-w-6xl mx-auto bg-transparent absolute inset-x-0 top-0"
+  class="w-full px-4 max-w-6xl mx-auto bg-gray-900 lg:bg-transparent absolute inset-x-0 top-0"
   x-data="{ isOpen: false }"
 >
   <nav class="flex items-center justify-between flex-wrap">
@@ -34,7 +34,7 @@
     </button>
 
     <div
-      class="lg:flex block w-full lg:w-auto hidden mt-2 sm:mt-0 lg:space-x-2"
+      class="lg:flex block w-full lg:w-auto hidden mt-2 sm:mt-0"
       :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }"
       @click.away="isOpen = false"
       x-show="true"
@@ -46,7 +46,16 @@
         @click="isOpen = false"
         >{{ .Title }}</a
       >
+
       {{ end }}
+      <span class="flex items-center h-12 lg:h-16 ml-4">
+        <a
+          href=""
+          class="bg-orange-600 block px-6 py-2 rounded-full text-orange-100 tracking-wider hover:text-white flex items-center"
+          @click="isOpen = false"
+          >Order Now</a
+        >
+      </span>
     </div>
   </nav>
 </header>
