@@ -1,0 +1,16 @@
+{{ $image := resources.Get (.Get "path") }}
+{{ $classes := .Get "classes" }}
+{{ $wide := .Get "wide" }}
+
+{{ $huge := ($image.Resize "2000x q75 jpg Lanczos" )}}
+{{ $large := ($image.Resize "1500x q75 jpg Lanczos" )}}
+{{ $medium := ($image.Resize "1000x q75 jpg Lanczos" )}}
+{{ $small := ($image.Resize "500x q75 jpg Lanczos" )}}
+{{ $tiny := ($image.Resize "48x q25 jpg" ) | images.Filter (images.GaussianBlur 6) }}
+
+<div class="relative {{ if $wide }}xl:-mx-48 lg:-mx-24{{ end }}">
+    <img class="object-cover w-full h-auto {{ $classes }}"
+        srcset="{{ $huge.Permalink }} {{ $huge.Width }}w, {{ $large.Permalink }} {{ $large.Width }}w, {{ $medium.Permalink }} {{ $medium.Width }}w, {{ $small.Permalink }} {{ $small.Width }}w"
+        src="data:image/jpeg;base64,{{ $tiny.Content | base64Encode }}" loading="lazy" alt='{{ .Get "alt" }}'
+        title='{{ .Get "alt" }}' width="{{ $tiny.Width }}" height="{{ $tiny.Height }}">
+</div>
