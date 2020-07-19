@@ -1,64 +1,14 @@
 {{ define "main" }}
+
+
 {{ $original := resources.Get (print .Params.thumbnail) }}
 {{ $large := ($original.Fill "1920x1080 jpg center q75 jpg Lanczos" )}}
 <div class="text-gray-700 h-100 items-center pattern">
   <div class="max-w-6xl mx-auto py-64 shadow-xl sm:px-4">
     <div class="bg-white w-full px-4 sm:px-16 py-12 sm:py-24 text-gray-800">
-      <h1 class="text-center text-2xl sm:text-4xl">Menu</h1>
-      <h2 class="text-xl sm:text-3xl text-center pt-12 sm:pt-24 pb-6 sm:pb-10">
-        Breakfast
-      </h2>
-      <div class="text-sm sm:text-base flex my-4">
-        <p>French Omelette</p>
-        <span class="flex-1 border-b border-gray-400 border-dashed mx-4"></span>
-        <p>5,60</p>
-      </div>
-      <div class="text-sm sm:text-base flex my-4">
-        <p>Taiwanese Omelette</p>
-        <span class="flex-1 border-b border-gray-400 border-dashed mx-4"></span>
-        <p>5,60</p>
-      </div>
-      <div class="text-sm sm:text-base flex my-4">
-        <p>Finnish Omelette</p>
-        <span class="flex-1 border-b border-gray-400 border-dashed mx-4"></span>
-        <p>6,20</p>
-      </div>
-      <h2 class="text-xl sm:text-3xl text-center pt-12 sm:pt-24 pb-6 sm:pb-10">
-        Hot Drinks
-      </h2>
-      <div class="text-sm sm:text-base flex my-4">
-        <p>Oolong</p>
-        <span class="flex-1 border-b border-gray-400 border-dashed mx-4"></span>
-        <p>2,50</p>
-      </div>
-      <div class="text-sm sm:text-base flex my-4">
-        <p>Earl Gray</p>
-        <span class="flex-1 border-b border-gray-400 border-dashed mx-4"></span>
-        <p>2,50</p>
-      </div>
-      <div class="text-sm sm:text-base flex my-4">
-        <p>Sun Moon Lake</p>
-        <span class="flex-1 border-b border-gray-400 border-dashed mx-4"></span>
-        <p>3,60</p>
-      </div>
-      <h2 class="text-xl sm:text-3xl text-center pt-12 sm:pt-24 pb-6 sm:pb-10">
-        Bubble Tea
-      </h2>
-      <div class="text-sm sm:text-base flex my-4">
-        <p>Brown sugar</p>
-        <span class="flex-1 border-b border-gray-400 border-dashed mx-4"></span>
-        <p>4,50</p>
-      </div>
-      <div class="text-sm sm:text-base flex my-4">
-        <p>Plum</p>
-        <span class="flex-1 border-b border-gray-400 border-dashed mx-4"></span>
-        <p>4,70</p>
-      </div>
-      <div class="text-sm sm:text-base flex my-4">
-        <p>Cream Cheese</p>
-        <span class="flex-1 border-b border-gray-400 border-dashed mx-4"></span>
-        <p>4,50</p>
-      </div>
+      {{ range $.Site.Data.menu }}
+      {{ partial "menu.html" . }}
+      {{ end }}
     </div>
   </div>
 </div>
