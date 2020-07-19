@@ -6,6 +6,10 @@
 <div class="text-gray-700 h-100 items-center pattern">
   <div class="max-w-6xl mx-auto py-64 shadow-xl sm:px-4">
     <div class="bg-white w-full px-4 sm:px-16 py-12 sm:py-24 text-gray-800">
+      <h1 class="text-5xl text-center">Menu</h1>
+      {{ range $.Site.Data.menu.sections }}
+      {{ partial "menu.html" . }}
+      {{ end }}
     </div>
   </div>
 </div>

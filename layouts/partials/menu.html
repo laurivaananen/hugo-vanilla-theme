@@ -1,1 +1,12 @@
-<h2>{{ .meal }}</h2>
+<h2 class="text-3xl text-center mt-16">{{ .meal }}</h2>
+<dl class="mt-8">
+    {{ range .dishes }}
+    <div class="flex justify-between mt-8 items-center">
+        <div>
+            <dt class="text-xl">{{ .name }}</dt>
+            <p class="text-gray-600">{{ .description }}</p>
+        </div>
+        <dd class="text-xl">{{ .price }}</dd>
+    </div>
+    {{ end }}
+</dl>
