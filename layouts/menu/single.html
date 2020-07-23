@@ -1,15 +1,15 @@
 {{ define "main" }}
 
-
-{{ $original := resources.Get (print .Params.thumbnail) }}
-{{ $large := ($original.Fill "1920x1080 jpg center q75 jpg Lanczos" )}}
-<div class="text-gray-700 h-100 items-center pattern">
-  <div class="max-w-6xl mx-auto py-64 shadow-xl sm:px-4">
-    <div class="bg-white w-full px-4 sm:px-16 py-12 sm:py-24 text-gray-800">
-      <h1 class="text-5xl text-center">Menu</h1>
-      {{ range $.Site.Data.menu.sections }}
-      {{ partial "menu.html" . }}
-      {{ end }}
+<div class="text-gray-700 items-center bg-shell-100 font-sans">
+  <div class="max-w-6xl mx-auto py-32">
+    <div class="w-full px-4 py-12 sm:py-24">
+      <h1 class="text-5xl text-center uppercase font-semibold tracking-widest text-coffee-1000">Berlin coffee shop</h1>
+      <h2 class="text-3xl text-center uppercase font-semibold tracking-widest text-coffee-800">tea house</h2>
+      <div class="flex flex-row flex-wrap mt-16">
+        {{ range $.Site.Data.menu.sections }}
+        {{ partial "menu.html" . }}
+        {{ end }}
+      </div>
     </div>
   </div>
 </div>

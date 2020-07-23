@@ -1,12 +1,14 @@
-<h2 class="text-3xl text-center mt-16">{{ .meal }}</h2>
-<dl class="mt-8">
-    {{ range .dishes }}
-    <div class="flex justify-between mt-8 items-center">
-        <div>
-            <dt class="text-xl">{{ .name }}</dt>
-            <p class="text-gray-600">{{ .description }}</p>
+<div class="w-full sm:w-1/2 px-8">
+    <h2 class="text-3xl font-semibold uppercase tracking-widest text-center mt-16 text-coffee-1000">{{ .meal }}</h2>
+    <dl class="mt-8">
+        {{ range .dishes }}
+        <div class="flex justify-between mt-8 items-center">
+            <div>
+                <dt class="text-2xl font-semibold text-coffee-800">{{ .name }}</dt>
+                <p class="text-coffee-700">{{ .description }}</p>
+            </div>
+            <dd class="text-coffee-800 font-semibold text-2xl">{{ .price }}</dd>
         </div>
-        <dd class="text-xl">{{ .price }}</dd>
-    </div>
-    {{ end }}
-</dl>
+        {{ end }}
+    </dl>
+</div>

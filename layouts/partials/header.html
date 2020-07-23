@@ -1,61 +1,33 @@
-<header
-  class="w-full px-4 max-w-6xl mx-auto bg-gray-900 lg:bg-transparent absolute inset-x-0 top-0"
-  x-data="{ isOpen: false }"
->
-  <nav class="flex items-center justify-between flex-wrap">
-    <a
-      href="{{ .Site.Home.Permalink }}"
-      class="h-16 flex items-center px-4 text-white font-bold"
-    >
-      Home
-    </a>
-    <button
-      @click="isOpen = !isOpen"
-      type="button"
-      class="block lg:hidden px-2 text-white hover:text-white focus:outline-none focus:text-white"
-    >
-      <svg
-        class="h-6 w-6 fill-current"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-      >
-        <path
-          x-show="isOpen"
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
-        />
-        <path
-          x-show="!isOpen"
-          fill-rule="evenodd"
-          d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-        />
-      </svg>
-    </button>
+<header class="w-full bg-gray-900 {{ if .Params.navTransparent }}lg:bg-transparent{{ end }} absolute inset-x-0 top-0 "
+  x-data="{ isOpen: false }">
+  <div class="max-w-6xl mx-auto px-4">
+    <nav class="flex items-center justify-between flex-wrap">
+      <a href="{{ .Site.Home.Permalink }}" class="h-16 flex items-center px-4 text-white font-bold">
+        Home
+      </a>
+      <button @click="isOpen = !isOpen" type="button"
+        class="block lg:hidden px-2 text-white hover:text-white focus:outline-none focus:text-white">
+        <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path x-show="isOpen" fill-rule="evenodd" clip-rule="evenodd"
+            d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" />
+          <path x-show="!isOpen" fill-rule="evenodd"
+            d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />
+        </svg>
+      </button>
 
-    <div
-      class="lg:flex block w-full lg:w-auto hidden mt-2 sm:mt-0"
-      :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }"
-      @click.away="isOpen = false"
-      x-show="true"
-    >
-      {{ range.Site.Menus.navigation }}
-      <a
-        href="{{ .URL | absURL  }}"
-        class="text-white hover:text-white h-12 lg:h-16 flex items-center px-4"
-        @click="isOpen = false"
-        >{{ .Title }}</a
-      >
+      <div class="lg:flex block w-full lg:w-auto hidden mt-2 sm:mt-0"
+        :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }" @click.away="isOpen = false" x-show="true">
+        {{ range.Site.Menus.navigation }}
+        <a href="{{ .URL | absURL  }}" class="text-white hover:text-orange-200 h-12 lg:h-16 flex items-center px-4"
+          @click="isOpen = false">{{ .Title }}</a>
 
-      {{ end }}
-      <span class="flex items-center h-12 lg:h-16 ml-4">
-        <a
-          href=""
-          class="bg-orange-600 block px-6 py-2 rounded-full text-orange-100 tracking-wider hover:text-white flex items-center"
-          @click="isOpen = false"
-          >Order Now</a
-        >
-      </span>
-    </div>
-  </nav>
+        {{ end }}
+        <span class="flex items-center h-12 lg:h-16 ml-4">
+          <a href=""
+            class="bg-orange-600 hover:bg-orange-700 block px-6 py-2 rounded-full text-orange-200 tracking-wider hover:text-orange-300 flex items-center"
+            @click="isOpen = false">Order Now</a>
+        </span>
+      </div>
+    </nav>
+  </div>
 </header>

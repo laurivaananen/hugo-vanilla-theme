@@ -2,35 +2,24 @@
 {{ $original := resources.Get (print .Params.thumbnail) }}
 {{ if $original }}
 {{ $large := ($original.Fill "1920x1080 jpg center q75 jpg Lanczos" )}}
-<div
-  class="text-gray-700 object-cover h-screen items-center flex"
-  style="background-image: url({{ $large.Permalink }})"
->
+<div class="text-gray-700 object-cover h-screen items-center flex"
+  style="background-image: url({{ $large.Permalink }})">
   <div class="text-white w-full lg:max-w-6xl mx-auto px-4">
     <div class="w-full lg:w-3/4">
-      <h1
-        class="font-semibold text-4xl sm:text-6xl tracking-tight leading-tight"
-      >
+      <h1 class="font-semibold text-4xl sm:text-6xl tracking-tight leading-tight">
         {{ .Title }}
       </h1>
       <h3 class="text-lg sm:text-2xl mt-8">
         Rich single origin teas from the high mountains of Tainan
       </h3>
       <div class="flex flex-row mt-12 items-center text-sm sm:text-lg">
-        <a
-          class="bg-orange-600 px-6 py-3 rounded-full text-orange-100 tracking-wider"
-          href="{{ (.Site.GetPage "contact.md").Permalink }}"
-          >Order Now</a
-        ><a class="ml-8 flex items-center tracking-wider" href="{{ (.Site.GetPage "menu.md").Permalink }}"
-          ><span>Our Menu</span
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 320 512"
-            class="text-white fill-current inline h-4 pl-2"
-          >
+        <a class="bg-orange-600 px-6 py-3 rounded-full text-orange-100 tracking-wider"
+          href="{{ (.Site.GetPage "contact.md").Permalink }}">Order Now</a><a
+          class="ml-8 flex items-center tracking-wider" href="{{ (.Site.GetPage "menu.md").Permalink }}"><span>Our
+            Menu</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
+            class="text-white fill-current inline h-4 pl-2">
             <path
-              d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
-            />
+              d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
           </svg>
         </a>
       </div>
@@ -38,13 +27,23 @@
   </div>
 </div>
 {{ end }}
-<div class="py-32 bg-gray-200">
-  <div class="max-w-6xl mx-auto flex">
-    <div class="w-1/2 text-gray-800 px-8">
+<div class="py-32 bg-gray-900"
+  style="background-image: linear-gradient(75deg, hsl(240, 20%, 10%), hsl(240, 20%, 15%));">
+  <div class="max-w-6xl mx-auto flex relative items-center">
+    <div class="w-2/5"></div>
+    {{ $original := resources.Get "images/beans_export.jpg" }}
+    {{ $large := ($original.Fill "1200x600 jpg center q75 jpg Lanczos" )}}
+    <div class="w-3/5 relative">
+      <div class="border-4 opacity-75 border-orange-400 absolute w-full h-full" style="top: 1rem; left: 1rem;"></div>
+      <div class="bg-red-400 w-full h-full bg-cover absolute" style="background-image: url({{ $large.Permalink }});">
+      </div>
+      <img src="{{ $large.Permalink }}" alt="" class="">
+    </div>
+    <div class="absolute w-3/5">
       <h2 class="font-semibold text-orange-400 text-3xl pb-8">
         Finest Tea from the High Mountains of Tainan
       </h2>
-      <div class="text-gray-700">
+      <div class="text-gray-200">
         <p class="mt-2">Our tea has its roots deep in Taiwanese culture.</p>
         <p class="mt-2">
           We take pride in providing the finest tea experience you can
@@ -57,11 +56,35 @@
         <p class="mt-2"></p>
       </div>
     </div>
-    {{ $original := resources.Get "images/jiufen_raw.jpg" }}
-    {{ $large := ($original.Resize "576x jpg center q75 jpg Lanczos" )}}
-    <div
-      class="w-1/2"
-    ><img src="{{ $large.Permalink }}" alt=""></div>
+  </div>
+  <div class="max-w-6xl mx-auto flex relative items-center mt-16">
+    {{ $original := resources.Get "images/beans_export.jpg" }}
+    {{ $large := ($original.Fill "1200x600 jpg center q75 jpg Lanczos" )}}
+    <div class="w-3/5 relative">
+      <div class="border-4 opacity-75 border-red-400 absolute w-full h-full" style="top: 1rem; left: 1rem;"></div>
+      <div class="bg-red-400 w-full h-full bg-cover absolute" style="background-image: url({{ $large.Permalink }});">
+      </div>
+      <img src="{{ $large.Permalink }}" alt="" class="">
+    </div>
+    <div class="absolute w-full flex flex-row-reverse text-right">
+      <div class="w-3/5">
+        <h2 class="font-semibold text-orange-400 text-3xl pb-8">
+          Finest Tea from the High Mountains of Tainan
+        </h2>
+        <div class="text-gray-200">
+          <p class="mt-2">Our tea has its roots deep in Taiwanese culture.</p>
+          <p class="mt-2">
+            We take pride in providing the finest tea experience you can
+            experience.
+          </p>
+          <p class="mt-2">
+            Each and every one of our teas we serve has been sourced from local
+            farmers using ancient old techniques.
+          </p>
+          <p class="mt-2"></p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 {{ end }}
