@@ -10,12 +10,13 @@
         {{ .Title }}
       </h1>
       <h3 class="text-lg sm:text-2xl mt-8">
-        Rich single origin teas from the high mountains of Tainan
+        Rich, single origin coffees from the high mountains of Vietnam
       </h3>
       <div class="flex flex-row mt-12 items-center text-sm sm:text-lg">
         <a class="bg-orange-600 px-6 py-3 rounded-full text-orange-100 tracking-wider"
           href="{{ (.Site.GetPage "contact.md").Permalink }}">Order Now</a><a
-          class="ml-8 flex items-center tracking-wider" href="{{ (.Site.GetPage "menu.md").Permalink }}"><span>Our
+          class="ml-8 flex items-center tracking-wider" href="{{ (.Site.GetPage "menu.md").Permalink }}"><span>Discover
+            Our
             Menu</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
             class="text-white fill-current inline h-4 pl-2">
             <path
@@ -27,73 +28,13 @@
   </div>
 </div>
 {{ end }}
-<div class="py-32 bg-gray-900"
-  style="background-image: linear-gradient(75deg, hsl(240, 20%, 10%), hsl(240, 20%, 15%));">
-  <div class="max-w-6xl mx-auto flex relative items-center">
-    <div class="w-2/5"></div>
-    {{ $original := resources.Get "images/beans_export.jpg" }}
-    {{ $large := ($original.Fill "1200x600 jpg center q75 jpg Lanczos" )}}
-    <div class="w-3/5 relative">
-      <div class="border-4 opacity-75 border-orange-400 absolute w-full h-full" style="top: 1rem; left: 1rem;"></div>
-      <div class="bg-red-400 w-full h-full bg-cover absolute" style="background-image: url({{ $large.Permalink }});">
-      </div>
-      <img src="{{ $large.Permalink }}" alt="" class="">
-    </div>
-    <div class="absolute w-3/5">
-      <h2 class="font-semibold text-orange-400 text-3xl pb-8">
-        Finest Tea from the High Mountains of Tainan
-      </h2>
-      <div class="text-gray-200">
-        <p class="mt-2">Our tea has its roots deep in Taiwanese culture.</p>
-        <p class="mt-2">
-          We take pride in providing the finest tea experience you can
-          experience.
-        </p>
-        <p class="mt-2">
-          Each and every one of our teas we serve has been sourced from local
-          farmers using ancient old techniques.
-        </p>
-        <p class="mt-2"></p>
-      </div>
-    </div>
-  </div>
-  <div class="max-w-6xl mx-auto flex relative items-center mt-16">
-    {{ $original := resources.Get "images/beans_export.jpg" }}
-    {{ $large := ($original.Fill "1200x600 jpg center q75 jpg Lanczos" )}}
-    <div class="w-3/5 relative">
-      <div class="border-4 opacity-75 border-red-400 absolute w-full h-full" style="top: 1rem; left: 1rem;"></div>
-      <div class="bg-red-400 w-full h-full bg-cover absolute" style="background-image: url({{ $large.Permalink }});">
-      </div>
-      <img src="{{ $large.Permalink }}" alt="" class="">
-    </div>
-    <div class="absolute w-full flex flex-row-reverse text-right">
-      <div class="w-3/5">
-        <h2 class="font-semibold text-orange-400 text-3xl pb-8">
-          Finest Tea from the High Mountains of Tainan
-        </h2>
-        <div class="text-gray-200">
-          <p class="mt-2">Our tea has its roots deep in Taiwanese culture.</p>
-          <p class="mt-2">
-            We take pride in providing the finest tea experience you can
-            experience.
-          </p>
-          <p class="mt-2">
-            Each and every one of our teas we serve has been sourced from local
-            farmers using ancient old techniques.
-          </p>
-          <p class="mt-2"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 <div class="py-32 bg-shell-300">
   <div class="max-w-6xl mx-auto w-full">
     <h2 class="font-semibold text-5xl text-center text-coffee-1000">You Deserve the Highest
       Quality Coffee</h2>
     <h3 class="font-semibold text-3xl text-center text-coffee-800">One sip and you will be hooked instantly</h3>
     <div class="flex flex-wrap mt-24">
-      <div class="mt-24 flex w-1/2 px-4">
+      <div class="mt-24 flex w-full sm:w-1/2 px-4">
         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
           x="0px" y="0px" viewBox="0 0 297.25 297.25" style="enable-background:new 0 0 297.25 297.25;"
           xml:space="preserve" class="text-coffee-1000 fill-current h-24">
@@ -124,7 +65,7 @@
           <p class="text-coffee-800 mt-1">We love our partner farmers as much as we love the coffee they produce.</p>
         </div>
       </div>
-      <div class="mt-24 flex w-1/2 px-4">
+      <div class="mt-24 flex w-full sm:w-1/2 px-4">
         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
           x="0px" y="0px" viewBox="0 0 296.238 296.238" style="enable-background:new 0 0 296.238 296.238;"
           xml:space="preserve" class="text-coffee-1000 fill-current h-24">
@@ -146,7 +87,7 @@
           </p>
         </div>
       </div>
-      <div class="mt-24 flex w-1/2 px-4">
+      <div class="mt-24 flex w-full sm:w-1/2 px-4">
         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
           x="0px" y="0px" viewBox="0 0 297.058 297.058" style="enable-background:new 0 0 297.058 297.058;"
           xml:space="preserve" class="text-coffee-1000 fill-current h-24">
@@ -168,7 +109,7 @@
           <p class="text-coffee-800 mt-2">Over 60 different types of beans for you to enjoy</p>
         </div>
       </div>
-      <div class="mt-24 flex w-1/2 px-4">
+      <div class="mt-24 flex w-full sm:w-1/2 px-4">
         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
           x="0px" y="0px" viewBox="0 0 296 296" style="enable-background:new 0 0 296 296;" xml:space="preserve"
           class="text-coffee-1000 fill-current h-24">
@@ -198,11 +139,180 @@
           menu</a>
       </div>
     </div>
-    <iframe width="520" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-      src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=%20Berlin+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
-    <a href='https://www.add-map.net/'>add bing map to website</a>
-    <script type='text/javascript'
-      src='https://embedmaps.com/google-maps-authorization/script.js?id=915649280aa92a476a586b3f7a0ea17104f760c2'></script>
+  </div>
+</div>
+<div class="py-32 bg-shell-1900">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-shell-200 text-5xl font-semibold">The Only Traditional Vietnamese Cafe in Berlin</h2>
+    <div class="flex flex-col sm:flex-row relative items-center mt-32">
+      <div class="flex flex-row-reverse">
+        {{ $original := resources.Get "images/vietnam_coffee.jpg" }}
+        {{ $large := ($original.Fill "1200x600 jpg center q75 jpg Lanczos" )}}
+        <div class="w-full sm:w-3/5 pl-4">
+          <div class="border-red-600 border-4 w-full h-full">
+            <img src="{{ $large.Permalink }}" class="transform -translate-x-4 -translate-y-4"
+              style="filter: brightness(80%);">
+          </div>
+        </div>
+      </div>
+      <div class="sm:absolute w-full sm:w-3/5">
+        <h2 class="font-semibold text-shell-200 text-3xl py-6 sm:pb-8 sm:pt-0">
+          Each Cup Brewed with Love
+        </h2>
+        <div class="text-coffee-200">
+          <p class="mt-2">We take immense care on providing the best coffee experience you can possible have.</p>
+          <p class="mt-2">Bio quality filters, fresh water and state of the art equipment makes every cup taste as best
+            as
+            possible</p>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col sm:flex-row relative items-center mt-32">
+      {{ $original := resources.Get "images/vietnam_coffee_3.jpg" }}
+      {{ $large := ($original.Fill "1200x600 jpg center q75 jpg Lanczos" )}}
+      <div class="w-full sm:w-3/5 pl-4">
+        <div class="border-blue-900 border-4 w-full h-full">
+          <img src="{{ $large.Permalink }}" class="transform -translate-x-4 -translate-y-4"
+            style="filter: brightness(70%);">
+        </div>
+      </div>
+      <div class="sm:absolute w-full flex flex-row-reverse text-left">
+        <div class="w-full sm:w-3/5">
+          <h2 class="font-semibold text-shell-100 text-3xl py-6 sm:pb-8 sm:pt-0">
+            Finest Tea from the High Mountains of Vietnam
+          </h2>
+          <div class="text-coffee-200">
+            <p class="mt-2">Our tea has its roots deep in Vietnamese culture.</p>
+            <p class="mt-2">
+              We take pride in providing the finest tea experience you can
+              experience.
+            </p>
+            <p class="mt-2">
+              Each and every one of our teas we serve has been sourced from local
+              farmers using ancient old techniques.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col sm:flex-row relative items-center mt-32">
+      <div class="flex flex-row-reverse">
+        {{ $original := resources.Get "images/vietnam_coffee_4.jpg" }}
+        {{ $large := ($original.Fill "1200x600 jpg center q75 jpg Lanczos" )}}
+        <div class="w-full sm:w-3/5 pl-4">
+          <div class="border-green-600 border-4 w-full h-full">
+            <img src="{{ $large.Permalink }}" class="transform -translate-x-4 -translate-y-4"
+              style="filter: brightness(80%);">
+          </div>
+        </div>
+      </div>
+      <div class="sm:absolute w-full sm:w-3/5">
+        <h2 class="font-semibold text-shell-200 text-3xl py-6 sm:pb-8 sm:pt-0">
+          Only Organic, Vegan Products
+        </h2>
+        <div class="text-coffee-200">
+          <p class="mt-2">Your health is our priority.</p>
+          <p class="mt-2">That is why we only serve products made with organic EU certified materials.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-32 flex flex-col w-full items-center">
+      <a class="mx-auto tracking-wider border-4 border-green-600 px-4 py-2 rounded text-green-600 font-semibold text-xl hover:bg-green-600 hover:text-shell-1900 transition ease-in-out"
+        href="">Order
+        Now</a>
+      <a href="{{ (.Site.GetPage "menu.md").Permalink }}" class="block mx-auto mt-4 text-green-800 underline">or
+        check our
+        menu</a>
+    </div>
+  </div>
+</div>
+<div class="bg-shell-300 py-32 text-coffee-1000">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="font-semibold text-5xl">Come Visit Us</h2>
+    <div class="flex flex-col sm:flex-row mt-8">
+      <div class="w-full sm:w-1/2 flex flex-row">
+        <div>
+          <dl>
+            <dd class="font-semibold">Monday - Friday</dd>
+            <dt>08:00 - 21:00</dt>
+            <dd class="font-semibold mt-4">Saturday</dd>
+            <dt>10:00 - 21:00</dt>
+            <dd class="font-semibold mt-4">Sunday</dd>
+            <dt>Closed</dt>
+          </dl>
+        </div>
+        <div class="ml-16 sm:ml-32">
+          <p class="font-semibold">Panoramastraße 1A</p>
+          <p>10178 Berlin</p>
+          <div class="flex mt-4">
+            <a href="">
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 455.73 455.73"
+                style="enable-background:new 0 0 455.73 455.73;" xml:space="preserve"
+                class="h-12 text-coffee-800 hover:text-coffee-1000 fill-current">
+                <path
+                  d="M0,0v455.73h242.704V279.691h-59.33v-71.864h59.33v-60.353c0-43.893,35.582-79.475,79.475-79.475
+      h62.025v64.622h-44.382c-13.947,0-25.254,11.307-25.254,25.254v49.953h68.521l-9.47,71.864h-59.051V455.73H455.73V0H0z" />
+                <g>
+              </svg>
+            </a>
+            <a href="" class="ml-4">
+              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 455.73 455.73"
+                style="enable-background:new 0 0 455.73 455.73;" xml:space="preserve"
+                class="h-12 text-coffee-800 hover:text-coffee-1000 fill-current">
+                <path d="M227.86,182.55c-24.98,0-45.32,20.33-45.32,45.31c0,24.99,20.34,45.33,45.32,45.33
+      c24.99,0,45.32-20.34,45.32-45.33C273.18,202.88,252.85,182.55,227.86,182.55z M227.86,182.55c-24.98,0-45.32,20.33-45.32,45.31
+      c0,24.99,20.34,45.33,45.32,45.33c24.99,0,45.32-20.34,45.32-45.33C273.18,202.88,252.85,182.55,227.86,182.55z M303.36,108.66
+      H152.37c-24.1,0-43.71,19.61-43.71,43.71v150.99c0,24.1,19.61,43.71,43.71,43.71h150.99c24.1,0,43.71-19.61,43.71-43.71V152.37
+      C347.07,128.27,327.46,108.66,303.36,108.66z M227.86,306.35c-43.27,0-78.48-35.21-78.48-78.49c0-43.27,35.21-78.48,78.48-78.48
+      c43.28,0,78.49,35.21,78.49,78.48C306.35,271.14,271.14,306.35,227.86,306.35z M308.87,165.61c-10.24,0-18.57-8.33-18.57-18.57
+      s8.33-18.57,18.57-18.57s18.57,8.33,18.57,18.57S319.11,165.61,308.87,165.61z M227.86,182.55c-24.98,0-45.32,20.33-45.32,45.31
+      c0,24.99,20.34,45.33,45.32,45.33c24.99,0,45.32-20.34,45.32-45.33C273.18,202.88,252.85,182.55,227.86,182.55z M303.36,108.66
+      H152.37c-24.1,0-43.71,19.61-43.71,43.71v150.99c0,24.1,19.61,43.71,43.71,43.71h150.99c24.1,0,43.71-19.61,43.71-43.71V152.37
+      C347.07,128.27,327.46,108.66,303.36,108.66z M227.86,306.35c-43.27,0-78.48-35.21-78.48-78.49c0-43.27,35.21-78.48,78.48-78.48
+      c43.28,0,78.49,35.21,78.49,78.48C306.35,271.14,271.14,306.35,227.86,306.35z M308.87,165.61c-10.24,0-18.57-8.33-18.57-18.57
+      s8.33-18.57,18.57-18.57s18.57,8.33,18.57,18.57S319.11,165.61,308.87,165.61z M227.86,182.55c-24.98,0-45.32,20.33-45.32,45.31
+      c0,24.99,20.34,45.33,45.32,45.33c24.99,0,45.32-20.34,45.32-45.33C273.18,202.88,252.85,182.55,227.86,182.55z M0,0v455.73h455.73
+      V0H0z M380.23,303.36c0,42.39-34.48,76.87-76.87,76.87H152.37c-42.39,0-76.87-34.48-76.87-76.87V152.37
+      c0-42.39,34.48-76.87,76.87-76.87h150.99c42.39,0,76.87,34.48,76.87,76.87V303.36z M303.36,108.66H152.37
+      c-24.1,0-43.71,19.61-43.71,43.71v150.99c0,24.1,19.61,43.71,43.71,43.71h150.99c24.1,0,43.71-19.61,43.71-43.71V152.37
+      C347.07,128.27,327.46,108.66,303.36,108.66z M227.86,306.35c-43.27,0-78.48-35.21-78.48-78.49c0-43.27,35.21-78.48,78.48-78.48
+      c43.28,0,78.49,35.21,78.49,78.48C306.35,271.14,271.14,306.35,227.86,306.35z M308.87,165.61c-10.24,0-18.57-8.33-18.57-18.57
+      s8.33-18.57,18.57-18.57s18.57,8.33,18.57,18.57S319.11,165.61,308.87,165.61z M227.86,182.55c-24.98,0-45.32,20.33-45.32,45.31
+      c0,24.99,20.34,45.33,45.32,45.33c24.99,0,45.32-20.34,45.32-45.33C273.18,202.88,252.85,182.55,227.86,182.55z M227.86,182.55
+      c-24.98,0-45.32,20.33-45.32,45.31c0,24.99,20.34,45.33,45.32,45.33c24.99,0,45.32-20.34,45.32-45.33
+      C273.18,202.88,252.85,182.55,227.86,182.55z M227.86,182.55c-24.98,0-45.32,20.33-45.32,45.31c0,24.99,20.34,45.33,45.32,45.33
+      c24.99,0,45.32-20.34,45.32-45.33C273.18,202.88,252.85,182.55,227.86,182.55z M303.36,108.66H152.37
+      c-24.1,0-43.71,19.61-43.71,43.71v150.99c0,24.1,19.61,43.71,43.71,43.71h150.99c24.1,0,43.71-19.61,43.71-43.71V152.37
+      C347.07,128.27,327.46,108.66,303.36,108.66z M227.86,306.35c-43.27,0-78.48-35.21-78.48-78.49c0-43.27,35.21-78.48,78.48-78.48
+      c43.28,0,78.49,35.21,78.49,78.48C306.35,271.14,271.14,306.35,227.86,306.35z M308.87,165.61c-10.24,0-18.57-8.33-18.57-18.57
+      s8.33-18.57,18.57-18.57s18.57,8.33,18.57,18.57S319.11,165.61,308.87,165.61z M227.86,182.55c-24.98,0-45.32,20.33-45.32,45.31
+      c0,24.99,20.34,45.33,45.32,45.33c24.99,0,45.32-20.34,45.32-45.33C273.18,202.88,252.85,182.55,227.86,182.55z M227.86,182.55
+      c-24.98,0-45.32,20.33-45.32,45.31c0,24.99,20.34,45.33,45.32,45.33c24.99,0,45.32-20.34,45.32-45.33
+      C273.18,202.88,252.85,182.55,227.86,182.55z M227.86,182.55c-24.98,0-45.32,20.33-45.32,45.31c0,24.99,20.34,45.33,45.32,45.33
+      c24.99,0,45.32-20.34,45.32-45.33C273.18,202.88,252.85,182.55,227.86,182.55z M303.36,108.66H152.37
+      c-24.1,0-43.71,19.61-43.71,43.71v150.99c0,24.1,19.61,43.71,43.71,43.71h150.99c24.1,0,43.71-19.61,43.71-43.71V152.37
+      C347.07,128.27,327.46,108.66,303.36,108.66z M227.86,306.35c-43.27,0-78.48-35.21-78.48-78.49c0-43.27,35.21-78.48,78.48-78.48
+      c43.28,0,78.49,35.21,78.49,78.48C306.35,271.14,271.14,306.35,227.86,306.35z M308.87,165.61c-10.24,0-18.57-8.33-18.57-18.57
+      s8.33-18.57,18.57-18.57s18.57,8.33,18.57,18.57S319.11,165.61,308.87,165.61z M227.86,182.55c-24.98,0-45.32,20.33-45.32,45.31
+      c0,24.99,20.34,45.33,45.32,45.33c24.99,0,45.32-20.34,45.32-45.33C273.18,202.88,252.85,182.55,227.86,182.55z" />
+                <g>
+              </svg>
+            </a>
+          </div>
+          <p class="mt-4 font-semibold">+49 0123456789</p>
+          <p class="">contact@example.org</p>
+        </div>
+      </div>
+      {{ $original := resources.Get "images/map.png" }}
+      {{ $large := ($original.Fill "1024x512 jpg center q75 jpg Lanczos" )}}
+      <a target="_blank" class="w-full sm:w-1/2 h-full mt-8 sm:-mt-24"
+        href="https://www.google.de/maps/place/Berliner+Fernsehturm/@52.5208963,13.4054813,16.25z/data=!4m12!1m6!3m5!1s0x47a850f970665009:0x6586494850eb180a!2sMine!8m2!3d52.5008157!4d13.3286631!3m4!1s0x0:0xc8fafc484349e4a1!8m2!3d52.5208149!4d13.409419">
+        <img src="{{ $large.Permalink }}" alt="">
+      </a>
+
+    </div>
   </div>
 </div>
 {{ end }}
