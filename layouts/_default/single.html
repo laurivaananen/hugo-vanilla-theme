@@ -2,16 +2,11 @@
 
 {{ $original := resources.Get (print .Params.thumbnail) }}
 {{ $large := ($original.Fill "1920x1080 jpg center q75 jpg Lanczos" )}}
-<div
-  class="text-gray-700 object-cover h-screen items-center flex"
-  style="background-image: url({{ $large.Permalink }})"
->
-  <div class="text-white w-full lg:max-w-6xl mx-auto px-4">
-    <div class="w-full lg:w-3/4">
-      <div class="markdown max-w-3xl mx-auto px-4 z-20 w-full">
-        <h1>{{ .Title }}</h1>
-        {{ .Content }}
-      </div>
+<div class="bg-shell-300 text-coffee-1000">
+  <div class="w-full lg:max-w-6xl mx-auto py-32 px-4">
+    <div class="markdown w-full">
+      <h1>{{ .Title }}</h1>
+      {{ .Content }}
     </div>
   </div>
 </div>
