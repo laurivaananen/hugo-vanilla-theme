@@ -315,4 +315,26 @@
     </div>
   </div>
 </div>
+<div class="py-32 bg-shell-1900 text-shell-300">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-5xl font-semibold text-center">Learn More About Us</h2>
+  </div>
+  <div class="max-w-3xl mx-auto px-4 mt-16">
+    {{ range $.Site.Data.landingPage.questionsAndAnswersData }}
+    <div class="border-b-2 border-shell-300 py-4"
+      x-data="{ isOpen{{ .id }}: false, question: '{{ .question }}', answer: '{{ .answer }}' }">
+      <div x-on:click="isOpen{{ .id }} = !isOpen{{ .id }}"
+        class="flex justify-between items-start text-3xl cursor-pointer mb-4">
+        <p x-text="question" class="font-semibold"></p>
+        <button x-text="isOpen{{ .id }} ? '-' : '+'" class="ml-4 font-semibold focus:outline-none"></button>
+      </div>
+      <div :x-ref="{{ .id }}" class="relative overflow-hidden transition-all max-h-0 duration-500 ease-in-out"
+        x-bind:style="isOpen{{ .id }} ? `max-height: ${ $refs[{{ .id }}].scrollHeight }px` : ``">
+        <p x-text="answer">
+        </p>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
 {{ end }}
