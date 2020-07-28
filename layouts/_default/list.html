@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="flex flex-col py-32">
+<div class="flex flex-col py-32 bg-shell-300">
     <div class="max-w-5xl mx-auto w-full">
         {{ $title := delimit (slice "Latest" ((title .Section) | pluralize)) " " }}
         <h1 data-text="{{ $title }}" class="px-4 font-semibold text-3xl sm:text-5xl relative">{{ $title }}</h1>

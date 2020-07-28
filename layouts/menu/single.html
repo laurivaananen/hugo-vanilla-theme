@@ -6,7 +6,7 @@
       <div class="flex items-center text-coffee-1000">
         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
           x="0px" y="0px" viewBox="0 0 297.167 297.167" style="enable-background:new 0 0 297.167 297.167;"
-          xml:space="preserve" class="h-24 mx-auto fill-current">
+          xml:space="preserve" class="h-12 sm:h-24 mx-auto fill-current">
           <g>
             <path
               d="M240,256.583H8c-4.418,0-8,3.582-8,8s3.582,8,8,8h232c4.418,0,8-3.582,8-8S244.418,256.583,240,256.583z" />
@@ -35,9 +35,9 @@
           </g>
         </svg>
       </div>
-
-      <h1 class="text-5xl text-center uppercase font-semibold tracking-widest text-coffee-1000">Berlin coffee shop</h1>
-      <h2 class="text-3xl text-center uppercase font-semibold tracking-widest text-coffee-800">Freshly</h2>
+      <h1 class="text-3xl sm:text-5xl text-center uppercase font-semibold tracking-widest text-coffee-1000">Berlin
+        coffee shop</h1>
+      <h2 class="text-xl sm:text-3xl text-center uppercase font-semibold tracking-widest text-coffee-800">Freshly</h2>
       <div class="flex flex-row flex-wrap mt-16">
         {{ range $.Site.Data.menu.sections }}
         {{ partial "menu.html" . }}

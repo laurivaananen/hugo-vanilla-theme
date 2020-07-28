@@ -1,6 +1,6 @@
 {{ $image := resources.Get (.Get "path") }}
 {{ $classes := .Get "classes" }}
-{{ $wide := .Get "wide" }}
+{{ $wide := eq (.Get "wide") true }}
 
 {{ $huge := ($image.Resize "2000x q75 jpg Lanczos" )}}
 {{ $large := ($image.Resize "1500x q75 jpg Lanczos" )}}
