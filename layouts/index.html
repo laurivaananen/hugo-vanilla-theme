@@ -321,15 +321,15 @@
   </div>
   <div class="max-w-3xl mx-auto px-4 mt-16">
     {{ range $index, $element :=  $.Site.Data.landingPage.questionsAndAnswersData }}
-    <div class="border-b-2 border-shell-300 py-4"
-      x-data="{ isOpen: false, question: '{{ $element.question }}', answer: '{{ $element.answer }}' }">
+    <div class="border-b-2 border-shell-300 py-4" x-data="{ isOpen: false }">
       <div x-on:click="isOpen = !isOpen" class="flex justify-between items-start text-3xl cursor-pointer mb-4">
-        <p x-text="question" class="font-semibold"></p>
+        <p class="font-semibold">{{ $element.question }}
+        </p>
         <button x-text="isOpen ? '-' : '+'" class="ml-4 font-semibold focus:outline-none"></button>
       </div>
       <div :x-ref="{{ $index }}" class="relative overflow-hidden transition-all max-h-0 duration-300 ease-out"
         x-bind:style="isOpen ? `max-height: ${ $refs[{{ $index }}].scrollHeight }px` : ``">
-        <p x-text="answer">
+        <p>{{ $element.answer | markdownify }}
         </p>
       </div>
     </div>
