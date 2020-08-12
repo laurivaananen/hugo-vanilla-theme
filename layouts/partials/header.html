@@ -16,8 +16,14 @@
         <div class="lg:flex block w-full lg:w-auto hidden mt-2 sm:mt-0 lg:space-x-2"
             :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }" @click.away="isOpen = false" x-show="true">
             {{ range .Site.Menus.navigation }}
-            <a href="{{ absURL .URL }}" class="text-gray-500 hover:text-blue-400 h-12 lg:h-16 flex items-center px-4"
-                @click="isOpen = false">{{ .Title }}</a>
+            <div class="group">
+                <a href="{{ absURL .URL }}"
+                    class="text-gray-900 group-hover:text-red-400 transition ease-out duration-300 h-12 lg:h-16 flex items-center px-4"
+                    @click="isOpen = false">{{ .Title }}</a>
+                <div
+                    class="hidden lg:block h-1 bg-red-400 scale-x-0 group-hover:scale-x-100 transform origin-left ease-out duration-300">
+                </div>
+            </div>
             {{ end }}
         </div>
     </nav>

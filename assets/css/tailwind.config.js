@@ -8,6 +8,9 @@ module.exports = {
       },
     }
   },
-  variants: {},
+  variants: {
+    scale: ['group-hover'],
+    textColor: ['responsive', 'hover', 'focus', 'group-hover']
+  },
   plugins: []
 }
