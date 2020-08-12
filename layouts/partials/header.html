@@ -1,5 +1,5 @@
-<header class="w-full px-4 max-w-6xl mx-auto" x-data="{ isOpen: false }">
-    <nav class="flex items-center justify-between flex-wrap">
+<header class="w-full max-w-screen-lg mx-auto" x-data="{ isOpen: false }">
+    <nav class="flex items-center -mx-0 lg:-mx-4 justify-between flex-wrap">
         <a href="{{ .Site.Home.Permalink }}" class="h-16 flex items-center px-4 text-gray-700 font-bold">
             Home
         </a>
@@ -15,8 +15,8 @@
 
         <div class="lg:flex block w-full lg:w-auto hidden mt-2 sm:mt-0 lg:space-x-2"
             :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }" @click.away="isOpen = false" x-show="true">
-            {{ range .Site.Sections }}
-            <a href="{{ .Permalink }}" class="text-gray-500 hover:text-blue-400 h-12 lg:h-16 flex items-center px-4"
+            {{ range .Site.Menus.navigation }}
+            <a href="{{ absURL .URL }}" class="text-gray-500 hover:text-blue-400 h-12 lg:h-16 flex items-center px-4"
                 @click="isOpen = false">{{ .Title }}</a>
             {{ end }}
         </div>

@@ -5,13 +5,12 @@
     {{- partial "head.html" . -}}
 </head>
 
-<body class="flex flex-col min-h-screen text-gray-900 relative antialiased">
+<body class="flex flex-col justify-between min-h-screen text-gray-900 relative antialiased font-sans">
     {{- partial "dev-size-indicator.html" . -}}
     {{- partial "header.html" . -}}
-    <main>
+    <main class="flex-1">
         {{- block "main" . }}{{- end }}
     </main>
-    {{- partial "disqus.html" . -}}
     {{- partial "dev-parameters.html" . -}}
     {{- partial "footer.html" . -}}
 </body>

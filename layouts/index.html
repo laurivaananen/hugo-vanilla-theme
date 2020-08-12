@@ -1,6 +1,71 @@
 {{ define "main" }}
-<article class="text-center text-gray-700">
-    <h1 class="font-serif font-thin text-5xl text-gray-500">{{ .Title }}</h1>
-    {{ .Content }}
+<article class="flex flex-col pt-32 pb-16">
+    <div class="max-w-screen-lg mx-auto px-4 lg:px-0 w-full">
+        <h1 class="text-6xl font-semibold leading-tight">Your Customers Deserve the Best Online Experience Possible
+        </h1>
+        <h2 class="text-2xl mt-8">Imagine your dream project turned into a reality.<br>We will make that happen, because
+            we
+            love our clients as much as their
+            products.
+        </h2>
+        <div class="mt-12">
+            <a style="background-image: linear-gradient(90deg, hsl(350, 100%, 59%), hsl(17, 100%, 59%));"
+                href="{{ (.Site.GetPage "contact.md").Permalink }}"
+                class="px-8 text-xl py-4 tracking-wide text-white font-semibold rounded-full">Tell
+                us about
+                your
+                breakthrough project</a>
+        </div>
+        <h2 class="text-3xl mt-64 text-center font-semibold">Our Services</h2>
+        <p class="text-xl text-center mt-4">Professional software development for small businesses and start-ups</p>
+        <div x-data="{selected: 0}" class="mt-32">
+            <div class="flex">
+                <p x-on:click="selected = 0" :class="{'text-red-600 border-red-600' : selected === 0}"
+                    class="font-semibold flex-1 border-b border-gray-400 w-1/3 text-center pb-6 hover:text-red-600 cursor-pointer transition duration-200 ease-out">
+                    Web
+                    Development</p>
+                <p x-on:click="selected = 1" :class="{'text-red-600 border-red-600' : selected === 1}"
+                    class="font-semibold flex-1 border-b border-gray-400 w-1/3 text-center pb-6 hover:text-red-600 cursor-pointer transition duration-200 ease-out">
+                    Design &
+                    Branding</p>
+                <p x-on:click="selected = 2" :class="{'text-red-600 border-red-600' : selected === 2}"
+                    class="font-semibold flex-1 border-b border-gray-400 w-1/3 text-center pb-6 hover:text-red-600 cursor-pointer transition duration-200 ease-out">
+                    Task
+                    Automation</p>
+            </div>
+            <div class="flex items-center mt-16">
+                <div x-show="selected === 0" class="">
+                    <h3 class="text-2xl font-semibold mb-8">Your business deserves a beautiful website</h3>
+                    <p>Online presence is now more important than ever.</p>
+                    <p>You need a team of tech experts to build you a website.</p>
+                    <p>Exactly how you want it to look like.</p>
+                </div>
+                <div x-show="selected === 1" class="">
+                    <h3 class="text-2xl font-semibold mb-8">Make your design the highlight of your brand</h3>
+                    <p>Online presence is now more important than ever.</p>
+                    <p>You need a team of tech experts to build you a website.</p>
+                    <p>Exactly how you want it to look like.</p>
+                </div>
+                <div x-show="selected === 2" class="">
+                    <h3 class="text-2xl font-semibold mb-8">Automate your workflows to focus on your business</h3>
+                    <p>Online presence is now more important than ever.</p>
+                    <p>You need a team of tech experts to build you a website.</p>
+                    <p>Exactly how you want it to look like.</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex">
+            <a href=""
+                class="mx-auto px-8 py-4 text-red-400 border border-red-400 block mt-16 hover:bg-red-400 hover:text-white transition duration-200 ease-out uppercase tracking-wide">Learn
+                More</a>
+        </div>
+    </div>
+    </div>
+    <div class="bg-blue-100 text-blue-900 mt-16">
+        <div class="max-w-screen-lg mx-auto px-4 lg:px-0 w-full">
+            <h2 class="text-3xl mt-16 text-center font-semibold">Bring your unique vision to life</h2>
+            <p class="text-xl text-center mt-4">We make our clients reach their true potential in the online space</p>
+        </div>
+    </div>
 </article>
 {{ end }}
