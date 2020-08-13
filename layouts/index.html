@@ -36,8 +36,8 @@
                         you want it to look like.</p>
                     {{ $original := resources.Get "images/teashop_mock.png" }}
                     {{ if $original }}
-                    {{ $large := ($original.Resize "1024x jpg center q75 jpg #ffffff Lanczos" )}}
-                    <img src=" {{ $large.Permalink }}" class="mt-12" alt="">
+                    {{ $large := ($original.Fit "1024x560 jpg center q75 jpg #ffffff Lanczos" )}}
+                    <img src=" {{ $large.Permalink }}" class="mt-12 mx-auto" alt="">
                     {{ end }}
                 </div>
                 <div :class="{'block': selected === 1, 'block sm:hidden': selected !== 1}" class="w-full mt-12">
@@ -48,8 +48,8 @@
                         experience.</p>
                     {{ $original := resources.Get "images/teashop_mock_2.png" }}
                     {{ if $original }}
-                    {{ $large := ($original.Resize "1024x jpg center q75 jpg #ffffff Lanczos" )}}
-                    <img src=" {{ $large.Permalink }}" class="mt-12" alt="">
+                    {{ $large := ($original.Fit "1024x560 jpg center q75 jpg #ffffff Lanczos" )}}
+                    <img src=" {{ $large.Permalink }}" class="mt-12 mx-auto" alt="">
                     {{ end }}
                 </div>
                 <div :class="{'block': selected === 2, 'block sm:hidden': selected !== 2}" class="w-full mt-12">
@@ -60,19 +60,18 @@
                     <p class="text-center text-lg">We will make sure you get the best domains, emails and hosting.</p>
                     {{ $original := resources.Get "images/teashop_mock_3.png" }}
                     {{ if $original }}
-                    {{ $large := ($original.Resize "1024x jpg center q75 jpg #ffffff Lanczos" )}}
-                    <img src=" {{ $large.Permalink }}" class="mt-12" alt="">
+                    {{ $large := ($original.Fit "1024x560 jpg center q75 jpg #ffffff Lanczos" )}}
+                    <img src=" {{ $large.Permalink }}" class="mt-12 mx-auto" alt="">
                     {{ end }}
                 </div>
             </div>
         </div>
-        <div class="mt-24 flex justify-center">
+        <div class="mt-12 flex justify-center">
             <a style="background-image: linear-gradient(90deg, hsl(350, 100%, 59%), hsl(17, 100%, 59%));"
                 href="{{ (.Site.GetPage "services.md").Permalink }}"
                 class="px-8 py-4 tracking-wide text-white font-semibold rounded-full hover:shadow-purple transition duration-200 ease-out">Learn
                 More</a>
         </div>
-    </div>
     </div>
     <div class="mt-64">
         <div class="max-w-screen-lg mx-auto px-4 lg:px-0 w-full">
@@ -81,9 +80,9 @@
                 flexible workflow keeps you in track on how your project is going throughout the development phase. We
                 believe communication is the key to for successfull projects.</p>
             <h3 class="text-3xl font-semibold text-center mt-16">Welcome to Our Product Oriented Workflow</h3>
-            <div class="flex items-center my-16 space-x-8">
-                <div class="w-1/2">
-                    <h4 id="step-1" class="relative text-2xl font-semibold mt-8">Initial Meeting</h4>
+            <div class="flex flex-wrap items-center my-16 space-y-8 sm:space-y-0 sm:pr-4">
+                <div class="w-full sm:w-1/2 order-1 sm:order-none">
+                    <h4 id="step-1" class="step relative text-2xl font-semibold mt-8">Initial Meeting</h4>
                     <p class="mt-2 text-lg">During our first meeting we will setup the project requirements and the
                         design
                         direction for the project.</p>
@@ -92,16 +91,13 @@
                 </div>
                 {{ $original := resources.Get "images/undraw_design_notes_8dmv.svg" }}
                 {{ if $original }}
-                <img class="w-1/2 h-auto" src="{{ $original.Permalink }}" alt="">
+                <img class="w-full sm:w-1/2 h-auto order-2 sm:order-none sm:pl-4" src="{{ $original.Permalink }}"
+                    alt="">
                 {{ end }}
             </div>
-            <div class="flex items-center my-16 space-x-8">
-                {{ $original := resources.Get "images/undraw_Portfolio_update_re_jqnp.svg" }}
-                {{ if $original }}
-                <img class="w-1/2 h-auto" src="{{ $original.Permalink }}" alt="">
-                {{ end }}
-                <div class="w-1/2">
-                    <h4 id="step-2" class="relative text-2xl font-semibold mt-8">Development Begins</h4>
+            <div class="flex flex-wrap items-center my-16 space-y-8 sm:space-y-0">
+                <div class="w-full sm:w-1/2 order-1 sm:order-1 sm:pl-4">
+                    <h4 id="step-2" class="step relative text-2xl font-semibold mt-8">Development Begins</h4>
                     <p class="mt-2 text-lg">Our top engineers and designers get to work. The time it takes will be
                         estimated
                         during our first meeting.</p>
@@ -109,10 +105,16 @@
                         feedback so
                         we know that we are going into the right direction.</p>
                 </div>
+                {{ $original := resources.Get "images/undraw_Portfolio_update_re_jqnp.svg" }}
+                {{ if $original }}
+                <img class="w-full sm:w-1/2 h-auto order-2 sm:order-none sm:pr-4" src="{{ $original.Permalink }}"
+                    alt="">
+                {{ end }}
             </div>
-            <div class="flex items-center my-16 space-x-8">
-                <div class="w-1/2">
-                    <h4 id="step-3" class="relative text-2xl font-semibold mt-8">Analytics and Business Infrastructure
+            <div class="flex flex-wrap items-center my-16 space-y-8 sm:space-y-0">
+                <div class="w-full sm:w-1/2 order-1 sm:order-none">
+                    <h4 id="step-3" class="step relative text-2xl font-semibold mt-8 sm:pr-4">Analytics and Business
+                        Infrastructure
                     </h4>
                     <p class="mt-2 text-lg">We can provide deep analytics on your sales or visitors.</p>
                     <p class="mt-2 text-lg">To provide the fastest websites we will use highest grade hosting and email
@@ -120,24 +122,48 @@
                 </div>
                 {{ $original := resources.Get "images/undraw_data_reports_706v.svg" }}
                 {{ if $original }}
-                <img class="w-1/2 h-auto" src="{{ $original.Permalink }}" alt="">
+                <img class="w-full sm:w-1/2 h-auto order-2 sm:order-none sm:pl-4" src="{{ $original.Permalink }}"
+                    alt="">
                 {{ end }}
             </div>
-            <div class="flex items-center my-16 space-x-8">
-                {{ $original := resources.Get "images/undraw_mobile_devices_k1ok.svg" }}
-                {{ if $original }}
-                <img class="w-1/2 h-auto" src="{{ $original.Permalink }}" alt="">
-                {{ end }}
-                <div class="w-1/2">
-                    <h4 id="step-4" class="relative text-2xl font-semibold mt-8">Your Website is Ready!</h4>
+            <div class="flex flex-wrap items-center my-16 space-y-8 sm:space-y-0">
+                <div class="w-full sm:w-1/2 order-1 sm:order-1 sm:pl-4">
+                    <h4 id="step-4" class="step relative text-2xl font-semibold mt-8">Your Website is Ready!</h4>
                     <p class="mt-2 text-lg">We can guarantee you will love it as much as we did building it.</p>
                     <p class="mt-2 text-lg">We will provide technical support according to the contract so you can have
                         a smooth
                         start with your new website.</p>
                 </div>
+                {{ $original := resources.Get "images/undraw_mobile_devices_k1ok.svg" }}
+                {{ if $original }}
+                <img class="w-full sm:w-1/2 h-auto order-2 sm:order-none sm:pr-4" src="{{ $original.Permalink }}"
+                    alt="">
+                {{ end }}
             </div>
-
         </div>
+    </div>
+    <div class="max-w-screen-lg mx-auto px-4 lg:px-0 w-full mt-64">
+        <h2 class="text-5xl font-semibold text-center">Let's Make Your Idea a Reality</h2>
+        <p class="text-center text-xl">We will back to you in no time</p>
+        <form class="max-w-xl mx-auto mt-16" name="contact" netlify>
+            <label class="block text-gray-800" for="name">Name</label>
+            <input id="name"
+                class="bg-gray-100 focus:bg-white w-full border-gray-400 focus:outline-none focus:border-purple-400 mt-2 px-4 py-2 rounded-md border block"
+                name="name" type="text" required>
+            <label class="mt-4 block" for="email">Email</label>
+            <input id="email"
+                class="bg-gray-100 focus:bg-white w-full border-gray-400 focus:outline-none focus:border-purple-400 mt-2 px-4 py-2 rounded-md border block"
+                name="email" type="email" required>
+            <label class="mt-4 block" for="message">Your Message</label>
+            <textarea id="message"
+                class="bg-gray-100 focus:bg-white w-full border-gray-400 focus:outline-none focus:border-purple-400 resize-y mt-2 px-4 py-2 rounded-md border block"
+                name="message" required rows=10></textarea>
+            <div class="mt-4 flex justify-center">
+                <button style="background-image: linear-gradient(90deg, hsl(350, 100%, 59%), hsl(17, 100%, 59%));"
+                    type="submit"
+                    class="px-8 py-4 tracking-wide text-white font-semibold rounded-full hover:shadow-purple transition duration-200 ease-out">Send</button>
+            </div>
+        </form>
     </div>
 </article>
 {{ end }}

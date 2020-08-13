@@ -1,6 +1,6 @@
 <header class="w-full max-w-screen-lg mx-auto" x-data="{ isOpen: false }">
     <nav class="flex items-center -mx-0 lg:-mx-4 justify-between flex-wrap">
-        <a href="{{ .Site.Home.Permalink }}" class="h-16 flex items-center px-4 text-gray-700 font-bold">
+        <a href="{{ .Site.Home.Permalink }}" class="h-16 flex items-center px-4">
             Home
         </a>
         <button @click="isOpen = !isOpen" type="button"
@@ -12,7 +12,6 @@
                     d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />
             </svg>
         </button>
-
         <div class="lg:flex block w-full lg:w-auto hidden mt-2 sm:mt-0 lg:space-x-2"
             :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }" @click.away="isOpen = false" x-show="true">
             {{ range .Site.Menus.navigation }}
