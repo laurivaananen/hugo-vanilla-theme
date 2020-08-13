@@ -11,11 +11,12 @@
         <div class="mt-24 flex justify-center">
             <a style="background-image: linear-gradient(90deg, hsl(350, 100%, 59%), hsl(17, 100%, 59%));"
                 href="{{ (.Site.GetPage "contact.md").Permalink }}"
-                class="px-8 py-4 tracking-wide text-white font-semibold rounded-full">Get in Touch</a>
+                class="px-8 py-4 tracking-wide text-white font-semibold rounded-full hover:shadow-purple transition duration-200 ease-out">Get
+                in Touch</a>
         </div>
-        <h2 class="text-3xl mt-64 text-center font-semibold">Our Services</h2>
+        <h2 class="text-5xl mt-64 text-center font-semibold">Our Services</h2>
         <p class="text-xl text-center mt-4">Professional software development for small businesses and start-ups</p>
-        <div x-data="{selected: 0}" class="mt-32">
+        <div x-data="{selected: 0}" class="mt-16">
             <div class="flex flex-wrap">
                 <p x-on:click="selected = 0" :class="{'text-red-600 border-red-600' : selected === 0}"
                     class="hidden sm:block font-semibold flex-1 border-b border-gray-400 w-1/3 text-center py-6 hover:text-red-600 cursor-pointer transition duration-200 ease-out">
@@ -27,46 +28,115 @@
                     Branding</p>
                 <p x-on:click="selected = 2" :class="{'text-red-600 border-red-600' : selected === 2}"
                     class="hidden sm:block font-semibold flex-1 border-b border-gray-400 w-1/3 text-center py-6 hover:text-red-600 cursor-pointer transition duration-200 ease-out">
-                    Task
-                    Automation</p>
-                <div :class="{'block': selected === 0, 'block sm:hidden': selected !== 0}" class="w-full my-8">
-                    <h3 class="text-2xl font-semibold mb-8">Your business deserves a beautiful website</h3>
-                    <p>Online presence is now more important than ever.</p>
-                    <p>You need a team of tech experts to build you a website.</p>
-                    <p>Exactly how you want it to look like.</p>
+                    Business Infrastructure</p>
+                <div :class="{'block': selected === 0, 'block sm:hidden': selected !== 0}" class="w-full mt-12">
+                    <h3 class="text-2xl font-semibold mb-6 text-center">Your business deserves a beautiful website</h3>
+                    <p class="text-center text-lg">Online presence is now more important than ever.</p>
+                    <p class="text-center text-lg">You need a team of tech experts to build you a website exactly how
+                        you want it to look like.</p>
+                    {{ $original := resources.Get "images/teashop_mock.png" }}
+                    {{ if $original }}
+                    {{ $large := ($original.Resize "1024x jpg center q75 jpg #ffffff Lanczos" )}}
+                    <img src=" {{ $large.Permalink }}" class="mt-12" alt="">
+                    {{ end }}
                 </div>
-                <div :class="{'block': selected === 1, 'block sm:hidden': selected !== 1}" class="w-full my-8">
-                    <h3 class="text-2xl font-semibold mb-8">Make your design the highlight of your brand</h3>
-                    <p>Online presence is now more important than ever.</p>
-                    <p>You need a team of tech experts to build you a website.</p>
-                    <p>Exactly how you want it to look like.</p>
+                <div :class="{'block': selected === 1, 'block sm:hidden': selected !== 1}" class="w-full mt-12">
+                    <h3 class="text-2xl font-semibold mb-6 text-center">Make your design the highlight of your brand
+                    </h3>
+                    <p class="text-center text-lg">Beautiful design will be remembered for ages.</p>
+                    <p class="text-center text-lg">Give your users the experience of a professional and exclusive online
+                        experience.</p>
+                    {{ $original := resources.Get "images/teashop_mock_2.png" }}
+                    {{ if $original }}
+                    {{ $large := ($original.Resize "1024x jpg center q75 jpg #ffffff Lanczos" )}}
+                    <img src=" {{ $large.Permalink }}" class="mt-12" alt="">
+                    {{ end }}
                 </div>
-                <div :class="{'block': selected === 2, 'block sm:hidden': selected !== 2}" class="w-full my-8">
-                    <h3 class="text-2xl font-semibold mb-8">Automate your workflows to focus on your business</h3>
-                    <p>Online presence is now more important than ever.</p>
-                    <p>You need a team of tech experts to build you a website.</p>
-                    <p>Exactly how you want it to look like.</p>
+                <div :class="{'block': selected === 2, 'block sm:hidden': selected !== 2}" class="w-full mt-12">
+                    <h3 class="text-2xl font-semibold mb-6 text-center">Automate the boring tasks so you can focus on
+                        what matters</h3>
+                    <p class="text-center text-lg">We provide in-depth analytics, search engine optimization and email
+                        automation for your service.</p>
+                    <p class="text-center text-lg">We will make sure you get the best domains, emails and hosting.</p>
+                    {{ $original := resources.Get "images/teashop_mock_3.png" }}
+                    {{ if $original }}
+                    {{ $large := ($original.Resize "1024x jpg center q75 jpg #ffffff Lanczos" )}}
+                    <img src=" {{ $large.Permalink }}" class="mt-12" alt="">
+                    {{ end }}
                 </div>
             </div>
         </div>
-        <div class="flex">
-            <a href=""
-                class="mx-auto px-8 py-4 text-red-600 border border-red-600 block mt-16 hover:bg-red-600 hover:text-white transition duration-200 ease-out uppercase tracking-wide">Learn
+        <div class="mt-24 flex justify-center">
+            <a style="background-image: linear-gradient(90deg, hsl(350, 100%, 59%), hsl(17, 100%, 59%));"
+                href="{{ (.Site.GetPage "services.md").Permalink }}"
+                class="px-8 py-4 tracking-wide text-white font-semibold rounded-full hover:shadow-purple transition duration-200 ease-out">Learn
                 More</a>
         </div>
     </div>
     </div>
-    <div class="bg-blue-100 text-blue-900 mt-16">
+    <div class="mt-64">
         <div class="max-w-screen-lg mx-auto px-4 lg:px-0 w-full">
-            <h2 class="text-3xl mt-16 text-center font-semibold">Bring your unique vision to life</h2>
+            <h2 class="text-5xl text-center font-semibold">Bring Your Unique Vision to Life</h2>
             <p class="text-xl text-center mt-4">We make our clients reach their true potential in the online space. Our
                 flexible workflow keeps you in track on how your project is going throughout the development phase. We
                 believe communication is the key to for successfull projects.</p>
-            <h3 class="text-2xl font-semibold">How we work</h3>
-            <h4 class="text-xl font-semibold mt-8">Initial Meeting</h4>
-            <p class="mt-2">We go over your requirements and give an estimate on the price.</p>
-            <h4 class="text-xl font-semibold mt-8">Signing the Contract</h4>
-            <p class="mt-2">A contract keeps us both safe.</p>
+            <h3 class="text-3xl font-semibold text-center mt-16">Welcome to Our Product Oriented Workflow</h3>
+            <div class="flex items-center my-16 space-x-8">
+                <div class="w-1/2">
+                    <h4 id="step-1" class="relative text-2xl font-semibold mt-8">Initial Meeting</h4>
+                    <p class="mt-2 text-lg">During our first meeting we will setup the project requirements and the
+                        design
+                        direction for the project.</p>
+                    <p class="mt-2 text-lg">We will prepare a contract for both of us to sign so we can go into
+                        the project with a clear mind.</p>
+                </div>
+                {{ $original := resources.Get "images/undraw_design_notes_8dmv.svg" }}
+                {{ if $original }}
+                <img class="w-1/2 h-auto" src="{{ $original.Permalink }}" alt="">
+                {{ end }}
+            </div>
+            <div class="flex items-center my-16 space-x-8">
+                {{ $original := resources.Get "images/undraw_Portfolio_update_re_jqnp.svg" }}
+                {{ if $original }}
+                <img class="w-1/2 h-auto" src="{{ $original.Permalink }}" alt="">
+                {{ end }}
+                <div class="w-1/2">
+                    <h4 id="step-2" class="relative text-2xl font-semibold mt-8">Development Begins</h4>
+                    <p class="mt-2 text-lg">Our top engineers and designers get to work. The time it takes will be
+                        estimated
+                        during our first meeting.</p>
+                    <p class="mt-2 text-lg">We will keep involved with frequent project updates and listen to your
+                        feedback so
+                        we know that we are going into the right direction.</p>
+                </div>
+            </div>
+            <div class="flex items-center my-16 space-x-8">
+                <div class="w-1/2">
+                    <h4 id="step-3" class="relative text-2xl font-semibold mt-8">Analytics and Business Infrastructure
+                    </h4>
+                    <p class="mt-2 text-lg">We can provide deep analytics on your sales or visitors.</p>
+                    <p class="mt-2 text-lg">To provide the fastest websites we will use highest grade hosting and email
+                        services. We take care of setting up custom domain names and email accounts.</p>
+                </div>
+                {{ $original := resources.Get "images/undraw_data_reports_706v.svg" }}
+                {{ if $original }}
+                <img class="w-1/2 h-auto" src="{{ $original.Permalink }}" alt="">
+                {{ end }}
+            </div>
+            <div class="flex items-center my-16 space-x-8">
+                {{ $original := resources.Get "images/undraw_mobile_devices_k1ok.svg" }}
+                {{ if $original }}
+                <img class="w-1/2 h-auto" src="{{ $original.Permalink }}" alt="">
+                {{ end }}
+                <div class="w-1/2">
+                    <h4 id="step-4" class="relative text-2xl font-semibold mt-8">Your Website is Ready!</h4>
+                    <p class="mt-2 text-lg">We can guarantee you will love it as much as we did building it.</p>
+                    <p class="mt-2 text-lg">We will provide technical support according to the contract so you can have
+                        a smooth
+                        start with your new website.</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </article>

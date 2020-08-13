@@ -11,6 +11,42 @@
     }
 }
 
+#step-1::after {
+    content: "1";
+    z-index: -1;
+    line-height: 100px;
+    width: 116px;
+    border-radius: 50%;
+    @apply absolute text-center text-6xl inline-block font-semibold text-purple-200 border-8 border-purple-200 -ml-10 -mt-10;
+}
+
+#step-2::before {
+    content: "2";
+    z-index: -1;
+    line-height: 100px;
+    width: 116px;
+    border-radius: 50%;
+    @apply absolute text-center text-6xl inline-block font-semibold text-red-200 border-8 border-red-200 -ml-20 -mt-10;
+}
+
+#step-3::after {
+    content: "3";
+    z-index: -1;
+    line-height: 100px;
+    width: 116px;
+    border-radius: 50%;
+    @apply absolute text-center text-6xl inline-block font-semibold text-orange-200 border-8 border-orange-200 -ml-10 -mt-10;
+}
+
+#step-4::before {
+    content: "4";
+    z-index: -1;
+    line-height: 100px;
+    width: 116px;
+    border-radius: 50%;
+    @apply absolute text-center text-6xl inline-block font-semibold text-green-200 border-8 border-green-200 -ml-20 -mt-10;
+}
+
 .markdown {
     @apply leading-relaxed flex flex-col;
 
